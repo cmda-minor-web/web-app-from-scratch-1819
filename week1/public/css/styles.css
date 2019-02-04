@@ -1,0 +1,46 @@
+  /* Palleton  : http://paletton.com/#uid=b2P3i2m0ksJtbhFA3mCuyujmY-7i1 */
+  
+  :root {
+    --primary: #ddd;
+    --dark: #333;
+    --light: #fff;
+    --shadow: 10px 5px 100px rgb(37, 37, 37);
+    
+    --textcolor: #005656;
+    --mediumbox: #2b9292;
+    --lightbox: #4CAAAA;
+    --darkbox: #066e6e;
+    
+    --background: rgba(14, 140, 140, 0.671);
+    --lightshadow: 10px 5px 100px rgba(255, 255, 255, 0.678);
+    --invisible: rgba(255, 255, 255, 0);
+
+    --boxgreen: #13BA13;
+    --lightboxgreen: #5FD45F;
+    --mediumboxgreen: #39C339;
+    --darkboxgreen: #089208;
+    --greenshadow: #089208c5;
+
+      /* Transition Speed */
+  --slowspeed: 2s;
+  --mediumspeed: 1s;
+  --fastspeed: 0.3s;
+}
+/* /////////////////////////////////////////////////////////////////////////////////// */
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden; 
+    background: var(--mediumbox);
+    margin-left: 3em;
+};
+
+/* .box{
+    margin-top: 10em;
+    margin-bottom: 10em;
+    color: red;
+}; */
