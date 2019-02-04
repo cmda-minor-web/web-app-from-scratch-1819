@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  border: 1px solid red;
+  margin: 0;
+}
+
+body {
+  font-family: 'Arial';
+  color: #BADA55;
+  background-color: white;
+  padding: 1%;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+header img {
+  width: 1em;
+  display: inline-block;
+}
+
+main{
+  width: 100%;
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap:
+}
+
+main h2 {
+  width: 100%;
+}
+
+main .left, main .right {
+  width: 50%;
+}
+
+.half {
+  width: 50%;
+}
+
+.left img {
+  /* width: 50%; */
+  overflow:hidden;
+}
