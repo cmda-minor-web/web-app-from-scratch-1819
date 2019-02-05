@@ -1,0 +1,58 @@
+html{
+  background: #B1EDE8;
+}
+
+section{
+  margin: 1em;
+  height: 21em;
+  padding: 0.5em;
+  border: 0.05em solid #BFD7EA;
+  text-align: center;
+  background: white;
+  border-radius: 1em;
+  transition: 0.6s;
+  background: #FFFCF9;
+}
+
+section:hover{
+  cursor: pointer;
+  transform: rotateY(180deg);
+}
+
+p{
+  display: none;
+  transform: rotateY(180deg)
+}
+
+section:hover
+  p{
+  display: block;
+  margin: 1em;
+  height: auto;
+}
+
+section:hover
+  h1{
+  display: none;
+}
+
+
+@media (min-width: 30em){
+  main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  section{
+      height: 21em;
+  }
+}
+
+@media (min-width: 75em){
+  main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  section{
+    height: 19em;
+  }
+}
