@@ -29,19 +29,23 @@
     <div class="box">
         <div><strong>This is a property of object 2 ([1])</strong></div>
         <div id="log2"></div>
-    </div>
-
+    </div> 
 
     <script src="public/js/app.js"></script>
     </script>
 <br><br><br>
 <h2>Extra oefening</h2>
-<input type="text" placeholder="What is your first name?"> <br> <br>
-<input type="text" placeholder="What is your last name?"> <br><br>
-<input type="text" placeholder="What is your email adress?">
+<input type="text" id="input1" placeholder="What is your first name?"> <br> <br>
+<input type="text" id="input2" placeholder="What is your last name?"> <br><br>
+<input type="text" id="input3" placeholder="What is your email adress?">
 
-<input type="button" value="Submit">
+<input type="button" value="Submit" onclick="storeData()">
 
+<h3>Recently added:</h3>
+<div id="recentlyAddedFirstName"></div> <br>
+<div id="recentlyAddedLastName"></div> <br>
+<div id="recentlyAddedEmail"></div>
+ 
 </body>
 
 </html>

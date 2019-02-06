@@ -18,7 +18,15 @@ httpRequest2.open("GET", urlJsonApi2);
 httpRequest2.send();
 
 
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Extra self made
+// function storeData(){
+// document.getElementById("recentlyAddedFirstName") = document.getElementById("input1").innerText
+// document.getElementById("recentlyAddedLastName") = document.getElementById("input2").innerText
+// document.getElementById("recentlyAddedEmail") = document.getElementById("input3").innerText
+// };
 
+// var recentlyAddedFirstName = document.getElementById("input1").innerText
+// /////////////////////////////////////////
 // Log HTTP response to console
 httpRequest.onreadystatechange=function(){
     if(this.readyState==4 && this.status ==200){
@@ -40,7 +48,9 @@ function ToInnerHTML(msg){
     document.getElementById('log1').innerHTML = jsonText[2].name + "<br/>" + jsonText[1].email;
     document.getElementById('log2').innerHTML = jsonText[3].name + "<br/>" + jsonText[1].email;
 
-  
+//   Stop dit in een lijst die dynamisch html genereerd!!!!
+
+
 // Read the html content of an element
     // console.log(logElem);
 
@@ -65,7 +75,7 @@ function ToInnerHTML(msg){
 // connect input boxes convert to json, return as text
 
 
-
+storeData();
 
 
 
