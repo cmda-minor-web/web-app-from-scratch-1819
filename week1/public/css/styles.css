@@ -40,8 +40,8 @@ main .left, main .right {
   width: 50%;
 }
 
-.left img {
-  /* width: 50%; */
+.left .previewImage {
+  width: 65%;
   overflow:hidden;
 }
 
@@ -69,18 +69,42 @@ main .left, main .right {
   background-position: -50px -25px;
 }
 
-.fire {
-  background-position: 0 0;
+.fairy {
+  background-position: -50px 0;
 }
 
-.fire {
-  background-position: 0 0;
+.metal {
+  background-position: -75px 0;
 }
 
-.fire {
-  background-position: 0 0;
+.dragon {
+  background-position: 0 -25px;
+}
+
+.psychic {
+  background-position: -75px -25px;
+}
+
+.dragon {
+  background-position: 0 -25px;
+}
+
+.darkness {
+  background-position: 0 -50px;
+}
+
+.grass {
+  background-position: -25px -50px;
+}
+
+.water {
+  background-position: -75px -50px;
+}
+
+.water {
+  background-position: -75px -50px;
 }
 
 .damage {
-  color: black;
+  color: #343434;
 }
