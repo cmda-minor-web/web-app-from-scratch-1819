@@ -5,9 +5,16 @@ var endpoint = 'https://www.food2fork.com/api/search';
 var key = 'b17fa4c70e792c176ba3904b1abec970';
 var url = endpoint + '?key=' + key;
 
-var searchSubject = document.getElementById('searchInput').innerText;
+var searchSubject = document.getElementById('#searchInput').value;
 var query = '&q=' + searchSubject;
 
+var submitButton = document.querySelector('#submitButton');
+submitButton.addEventListener('click', testClick);
+
+function testClick () {
+    console.log('click werkt!')
+    console.log(searchSubject);
+}
 
 // httpRequest.open("GET", url);
 // httpRequest.send();
@@ -24,8 +31,6 @@ httpRequest.onreadystatechange=function(){
     };
 
 
-var submitButton = document.querySelector('button');
-submitButton.addEventListener('click', fireSearchForRecipe());
 
     // log user query to console
 function fireSearchForRecipe(){
