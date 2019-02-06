@@ -2,19 +2,20 @@ console.log('Hello World')
 
 var main = document.querySelector('main')
 var currentNumber = 60
-var url = 'https://api.pokemontcg.io/v1/cards/base2-' + currentNumber
+var url = 'https://api.pokemontcg.io/v1/cards/base1-' + currentNumber
 var input = document.querySelector('input')
 
-input.addEventListener('submit', () => {
+// eventListener to any change on the input element
+input.addEventListener('change', () => {
   currentNumber = input.value
-  url = url
+  url = 'https://api.pokemontcg.io/v1/cards/base1-' + currentNumber
   console.log(currentNumber)
   console.log(url)
   request.open('GET', url, true)
   request.send();
  })
 
-
+// create new XHR
 var request = new XMLHttpRequest()
 request.onload = function() {
     if (request.status == 200) {
@@ -29,9 +30,12 @@ request.onload = function() {
   }
 }
 
+// function that renders the text of the card
+
 function handleData(data){
   console.log('data is handeled')
 
+// render the attack and call the costToImage function to load symbols
   function renderAttacks() {
     var attacks = ''
     data.card.attacks.forEach( function(attack) {
@@ -47,7 +51,7 @@ function handleData(data){
 
       return attacks
     }
-
+// loop through the text value of an attack and use the <i> as a symbol for every value
   function costToImage(cost){
     var totalCost = ''
     cost.forEach(function(element) {
@@ -56,10 +60,10 @@ function handleData(data){
     })
     return totalCost
   }
-
+// create a string of html for the card
   var format =`
   <section class='left half'>
-    <img class='previewImage' src='${data.card.imageUrl}'/>
+    <img class='previewImage' src='${data.card.imageUrlHiRes}'/>
   </section>
   <section class='right half'>
     <section class='name'>
@@ -70,11 +74,16 @@ function handleData(data){
     </section>
     <section class='attack'>
     ${renderAttacks()}
+
+    <section>
+    <h3>Artist</h3><p>${data.card.artist}</p>
+    </section>
   </section>
   `
-
+// insert format within main element
   main.innerHTML = format
 }
 
+//open en send initial request
 request.open('GET', url, true)
 request.send()
