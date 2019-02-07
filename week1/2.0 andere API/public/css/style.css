@@ -1,0 +1,60 @@
+body{
+    margin: 0;
+    
+    background-color: beige;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+#titles p h3{
+
+    border: #333 1px solid;
+}
+
+#ingredients h3{
+    border: #333 1px solid;
+}
+
+
+
+
+
+
+#selectedTitles{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /*6 times 1 fraction */
+    grid-gap: 1em;
+    /* grid-auto-rows: 100px;    /*hights */
+    grid-auto-rows: minmax(50px, auto);/*hights*/
+    border: #333 1px solid;
+
+}
+
+.searchedRecipes{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /*6 times 1 fraction */
+    grid-gap: 1em;
+    /* grid-auto-rows: 100px;    /*hights */
+    grid-auto-rows: minmax(100px, auto);/*hights*/
+    border: #333 1px solid;
+
+}
+.wrapper >div{
+    background: #b45959;
+    padding: 20px;
+}
+
+.wrapper > div:nth-child(odd){
+    background: #ddd234;
+}
+
+.nested > h3 p{
+    border:#333 1px solid;
+    padding:1em;
+    font-size: 1em;
+}
+
+.nested > input{
+    margin-top: 0,5rem;
+    
+}
