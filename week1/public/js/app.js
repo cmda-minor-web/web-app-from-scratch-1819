@@ -9,7 +9,7 @@ const urlJsonApi2  = 'https://randomuser.me/api/';
 
 // const content = Element.innerHTML;
 // Element.innerHTML = htmlString;
-
+//
 // tie HTTP method and URL endpoint together + fire off request
 httpRequest.open("GET", urlJsonApi);
 httpRequest.send();
