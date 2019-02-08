@@ -1,7 +1,15 @@
+:root {
+    --primary: #ddd;
+    --dark: #333;
+    --light: #fff;
+    --shadow: 0 1px 15px rgba(104, 104, 104, 0.8);
+}
+
+
 body{
     margin: 0;
-    
-    background-color: beige;
+    background-color: grey;
+
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
@@ -22,11 +30,12 @@ body{
 
 #selectedTitles{
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /*6 times 1 fraction */
+    grid-template-columns: repeat(3, 1fr); /*6 times 1 fraction */
     grid-gap: 1em;
     /* grid-auto-rows: 100px;    /*hights */
     grid-auto-rows: minmax(50px, auto);/*hights*/
-    border: #333 1px solid;
+box-shadow: --(var(--shadow);)
+
 
 }
 
@@ -36,20 +45,26 @@ body{
     grid-gap: 1em;
     /* grid-auto-rows: 100px;    /*hights */
     grid-auto-rows: minmax(100px, auto);/*hights*/
-    border: #333 1px solid;
 
 }
 .wrapper >div{
-    background: #b45959;
+   
     padding: 20px;
+    margin-left: 4em;
+    margin-right: 4em;
 }
 
 .wrapper > div:nth-child(odd){
-    background: #ddd234;
+   
+}
+
+.wrapper{
+    background-image: url('C:/Users/user/Desktop/Minor Web Development/web-app-from-scratch-18-19/week1/2.0/img/food-wallpaper2.jpg');
+    background-size: 110%;
+    background-repeat: no-repeat;
 }
 
 .nested > h3 p{
-    border:#333 1px solid;
     padding:1em;
     font-size: 1em;
 }
@@ -57,4 +72,22 @@ body{
 .nested > input{
     margin-top: 0,5rem;
     
+}
+
+
+h4{
+    font-size: 3rem;
+    margin-top: 7rem;
+    background-color: rgba(139, 236, 110, 0.74);
+    border-radius: 1em;
+    padding: 1em 1em;
+}
+
+input{
+    height: 3em;
+    background-color: lightyellow;
+}
+
+#headerImage{
+  
 }

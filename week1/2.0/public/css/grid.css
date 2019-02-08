@@ -1,0 +1,20 @@
+.searchedRecipes{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+
+}
+
+
+
+#ingredients > div > div:nth-child(1){
+    grid-column: 1/4;
+    }
+
+
+
+/* .recommendedSection{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+} */
