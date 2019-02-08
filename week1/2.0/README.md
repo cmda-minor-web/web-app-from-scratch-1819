@@ -3,6 +3,9 @@ Food API
 //Link To Live Demo:
 
 
+//
+<!-- ![Image of the Landing View](relative/path/to/img.jpg?raw=true "Landing View") -->
+
 //What does it Do?
 
     The app interacts between the user and a web server. The user can deliver input to the app in the form of ingredients. The app then returns a list of meals that consist those ingredients.

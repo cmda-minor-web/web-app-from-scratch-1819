@@ -42,7 +42,6 @@ httpRequest.onreadystatechange=function(){
 function ToInnerHTML(msg){
     // insert Serialize? when needed?
 
-    var logElem = document.getElementsByClassName('log');
     console.log(jsonText)
     document.getElementById('log').innerHTML = jsonText[1].name + "<br/>" + jsonText[1].email;
     document.getElementById('log1').innerHTML = jsonText[2].name + "<br/>" + jsonText[1].email;
@@ -76,8 +75,6 @@ function ToInnerHTML(msg){
 
 
 storeData();
-
-
 
 
     };
