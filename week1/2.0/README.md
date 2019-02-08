@@ -6,6 +6,8 @@ Food API
 //
 <!-- ![Image of the Landing View](relative/path/to/img.jpg?raw=true "Landing View") -->
 
+https://github.com/Stanargy/web-app-from-scratch-18-19/tree/master/week1/2.0
+
 //What does it Do?
 
     The app interacts between the user and a web server. The user can deliver input to the app in the form of ingredients. The app then returns a list of meals that consist those ingredients.
