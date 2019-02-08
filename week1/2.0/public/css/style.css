@@ -34,9 +34,7 @@ body{
     grid-gap: 1em;
     /* grid-auto-rows: 100px;    /*hights */
     grid-auto-rows: minmax(50px, auto);/*hights*/
-box-shadow: --(var(--shadow);)
-
-
+box-shadow: var(--shadow);
 }
 
 .searchedRecipes{
@@ -52,10 +50,6 @@ box-shadow: --(var(--shadow);)
     padding: 20px;
     margin-left: 4em;
     margin-right: 4em;
-}
-
-.wrapper > div:nth-child(odd){
-   
 }
 
 .wrapper{
@@ -86,8 +80,4 @@ h4{
 input{
     height: 3em;
     background-color: lightyellow;
-}
-
-#headerImage{
-  
 }
