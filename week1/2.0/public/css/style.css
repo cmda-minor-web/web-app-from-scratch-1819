@@ -1,14 +1,37 @@
-:root {
+  /* Palleton  : http://paletton.com/#uid=b2P3i2m0ksJtbhFA3mCuyujmY-7i1 */
+  
+  :root {
     --primary: #ddd;
     --dark: #333;
     --light: #fff;
-    --shadow: 0 1px 15px rgba(104, 104, 104, 0.8);
+    --shadow: 10px 5px 100px rgb(37, 37, 37);
+    
+    --textcolor: #005656;
+    --mediumbox: #2b9292;
+    --lightbox: #4CAAAA;
+    --darkbox: #066e6e;
+    
+    --background: rgba(14, 140, 140, 0.671);
+    --lightshadow: 10px 5px 100px rgba(255, 255, 255, 0.678);
+    --invisible: rgba(255, 255, 255, 0);
+
+    --boxgreen: #13BA13;
+    --lightboxgreen: #5FD45F;
+    --mediumboxgreen: #39C339;
+    --darkboxgreen: #089208;
+    --greenshadow: #089208c5;
+
+      /* Transition Speed */
+  --slowspeed: 2s;
+  --mediumspeed: 1s;
+  --fastspeed: 0.3s;
 }
+/* /////////////////////////////////////////////////////////////////////////////////// */
 
 
 body{
     margin: 0;
-    background-color: grey;
+    background-color: rgb(52, 231, 216);
 
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
@@ -25,35 +48,15 @@ body{
 
 
 
-
-
-
-#selectedTitles{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /*6 times 1 fraction */
-    grid-gap: 1em;
-    /* grid-auto-rows: 100px;    /*hights */
-    grid-auto-rows: minmax(50px, auto);/*hights*/
-box-shadow: var(--shadow);
-}
-
-.searchedRecipes{
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /*6 times 1 fraction */
-    grid-gap: 1em;
-    /* grid-auto-rows: 100px;    /*hights */
-    grid-auto-rows: minmax(100px, auto);/*hights*/
-
-}
-.wrapper >div{
+.mainWrapper >div{
    
     padding: 20px;
     margin-left: 4em;
     margin-right: 4em;
 }
 
-.wrapper{
-    background-image: url('C:/Users/user/Desktop/Minor Web Development/web-app-from-scratch-18-19/week1/2.0/img/food-wallpaper2.jpg');
+.mainWrapper{
+    background-image: url('../../img/food-wallpaper2.jpg');
     background-size: 110%;
     background-repeat: no-repeat;
 }
@@ -68,16 +71,56 @@ box-shadow: var(--shadow);
     
 }
 
+/* .nav > ul{
+    align-items: center;
+    background-color: aqua;
+    border: black 1px dotted;
+} */
 
 h4{
     font-size: 3rem;
-    margin-top: 7rem;
-    background-color: rgba(139, 236, 110, 0.74);
+    margin-top: 2rem;
+    background-color: rgba(149, 224, 127, 0.74);
     border-radius: 1em;
     padding: 1em 1em;
+    width: 30%;
+    height: 8rem;
+    grid-column: 1/5;
+    grid-row: 2/3;
 }
 
 input{
     height: 3em;
     background-color: lightyellow;
+}
+
+.inputSearch{
+    grid-column: 1/3;
+    grid-row: 3/4;
+}
+
+
+/* Cursor */
+.txt-type > .txt {
+    border-right: 0.2rem solid #777;
+}
+
+/* END of cursor */
+
+.typeWriter{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    
+}
+
+.typeWriter > h5{
+    font-size: 5rem;
+    grid-column: 1/5;
+    margin: 0;
+}
+
+.recommendedSection{
+    grid-column: 3/6;
+grid-row: 2/3;
 }

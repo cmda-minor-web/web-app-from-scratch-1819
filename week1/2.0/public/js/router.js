@@ -1,0 +1,4 @@
+routes = {
+    '/': homePage,
+    '/pageNotFound': pageNotFound,
+};

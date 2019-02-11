@@ -1,17 +1,38 @@
-.searchedRecipes{
+#selectedTitles{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr); /*6 times 1 fraction */
+    grid-gap: 1em;
+    /* grid-auto-rows: 100px;    /*hights */
+    grid-auto-rows: minmax(50px, auto);/*hights*/
 
 }
 
+.searchedRecipes{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /*6 times 1 fraction */
+    grid-gap: 1em;
+    /* grid-auto-rows: 100px;    /*hights */
+    grid-auto-rows: minmax(8rem, auto);/*hights*/
 
+}
+
+.searchedRecipes > button{
+    font-size: 20px;
+}
 
 #ingredients > div > div:nth-child(1){
     grid-column: 1/4;
     }
 
+.nav{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    list-style: none; 
+    margin-right: 3vmin;
+    margin-left: 3vmin;
+    align-items: center;
 
+}
 
 /* .recommendedSection{
     display: grid;
