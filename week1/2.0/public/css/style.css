@@ -124,3 +124,13 @@ input{
     grid-column: 3/6;
 grid-row: 2/3;
 }
+
+
+.nav{
+list-style: none; 
+margin-right: 3vmin;
+margin-left: 3vmin;
+justify-items: center;
+background-color: #fff;
+border: 1px solid black;
+}

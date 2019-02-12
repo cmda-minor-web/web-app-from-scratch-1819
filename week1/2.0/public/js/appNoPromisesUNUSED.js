@@ -15,7 +15,7 @@ function submitted() {
     console.log('click works!', searchSubject.value);
     fireSearchForRecipe(searchSubject.value);
     //console.log(searchSubject);
-    
+
 }
 
 // console.log(httpRequest);
@@ -26,22 +26,21 @@ httpRequest.onreadystatechange = function () {
         // readyState 4: done. other respones : https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState
         var jsonText = JSON.parse(httpRequest.responseText)
         // console.log("name: " + jsonText[0].name);
-        
+
         ToInnerHTML(jsonText);
     }
-    
+
 };
 
 // log user query to console
 function fireSearchForRecipe(searchSubject) {
     var query = '&q=' + searchSubject;
-    
+
     //Catch input query from user
-    
+
     httpRequest.open("GET", url + query);
     httpRequest.send();
     console.log(url + query);
-
 };
 
 
@@ -53,26 +52,26 @@ function ToInnerHTML(data) {
 
     // createElement
     // appendChild
-    
+
     console.log("iets")
-    for( let i = 0; i < 10; i++){
+    for (let i = 0; i < 10; i++) {
         //i < "number of displayed items"
         // console.log("nog iets" + i)
-        
+
         var newP = document.createElement("BUTTON");
-            newP.innerText = data.recipes[i].title;
-            var newP2 = document.createElement("H5");
-            newP2.innerText = data.recipes[i].ingredients;
-            
-         document.querySelector('#lookedUpTitles').appendChild(newP);
+        newP.innerText = data.recipes[i].title;
+        var newP2 = document.createElement("H5");
+        newP2.innerText = data.recipes[i].ingredients;
+
+        document.querySelector('#lookedUpTitles').appendChild(newP);
         // document.querySelector('.titlesIngredients').appendChild(newP2);
         //console.log(data.recipe[i].ingredients + " Ingredients found");
         // line above returns unidentified
-        };
+    };
 
 
 
-    
+
 };
 
 
@@ -82,20 +81,20 @@ function ToInnerHTML(data) {
 //outcommented because the result interferes with searchSubject
 // upon arriving on site.
 // need to add array with the 10 meals that will be displayed, currently 30+ are displayed.
-function recipeShowcase(){
+function recipeShowcase() {
 
     var genre = [
-        "meat", "fruit", "icecream", 
+        "meat", "fruit", "icecream",
         "protein", "chicken", "sushi",
         "beef", "pancake", "vegetable",
         "drink"
     ]
-    var x = Math.floor(Math.random() *11);
+    var x = Math.floor(Math.random() * 11);
     var selectedGenre = genre[x];
-console.log("The value of x is " + selectedGenre);
+    console.log("The value of x is " + selectedGenre);
 
-// fireSearchForRecipe(searchSubject.value);
-// searchSubject = selectedGenre;
+    // fireSearchForRecipe(searchSubject.value);
+    // searchSubject = selectedGenre;
 
 
 }

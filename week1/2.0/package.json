@@ -1,0 +1,14 @@
+{ 
+  "name": "wafs",
+  "version": "1.0.0",
+  "description": "web app from scratch",
+  "main": "App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stan Ooms",
+  "license": "ISC",
+  "dependencies": {
+    "routie": "0.0.1"
+  }
+}

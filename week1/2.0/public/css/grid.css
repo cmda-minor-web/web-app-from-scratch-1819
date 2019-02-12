@@ -23,19 +23,12 @@
 #ingredients > div > div:nth-child(1){
     grid-column: 1/4;
     }
+    
 
 .nav{
     display:grid;
     grid-template-columns: repeat(4, 1fr);
-    list-style: none; 
-    margin-right: 3vmin;
-    margin-left: 3vmin;
-    align-items: center;
+ 
 
 }
 
-/* .recommendedSection{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-} */
