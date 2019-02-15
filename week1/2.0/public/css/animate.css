@@ -1,0 +1,15 @@
+.typeWriter > h4{
+    animation: hue 3s alternate infinite;
+}
+
+
+@keyframes hue{
+    0%{
+        filter: hue-rotate(0deg);
+    }
+
+    100%{
+        filter: hue-rotate(100deg);
+        
+    }
+}

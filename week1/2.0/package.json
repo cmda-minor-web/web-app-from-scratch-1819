@@ -1,4 +1,4 @@
-{ 
+{
   "name": "wafs",
   "version": "1.0.0",
   "description": "web app from scratch",
@@ -9,6 +9,7 @@
   "author": "Stan Ooms",
   "license": "ISC",
   "dependencies": {
+    "handlebars": "^4.1.0",
     "routie": "0.0.1"
   }
 }

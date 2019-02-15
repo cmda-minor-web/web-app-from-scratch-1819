@@ -107,3 +107,50 @@ function recipeShowcase() {
 //reduce
 //promises
 //
+
+
+
+ // select html class for the logging of the JSON
+ function ToInnerHTML(data, element) {
+    // insert Serialize? when needed?
+    // console.log(data.recipes);
+    // .createElement() =  create a new html element
+    // .querySelector() = select the .class or #id from the index.html file
+    // .appendChild() = add something to the selected  
+    for (let i = 0; i < data.recipes.length; i++) {
+        if (data.recipes.length > 5) {
+            data.recipes.slice(0, 5)
+        }
+
+        //i < "number of displayed items"
+        //console.log(data.recipes[i].title);
+        var newP = document.createElement("BUTTON");
+        //console.log(data.recipes[i]);
+
+        newP.innerText = data.recipes[i].title;
+
+        // data.recipes[i].title.forEach(title => {
+        //     console.log(title);
+        //////////////////////////////////////////////////////////////////////////////////////ADD CLASS .viewMore
+        // return;
+        // });
+        var recipeImage = document.createElement("IMAGE");
+        recipeImage.innerHTML = data.recipes[i].image;
+
+        // var newP2 = document.createElement("H5");
+        //newP2.innerText = data.recipes[i].ingredients;
+
+        newP.data = data.recipes[i];
+        newP.onclick = function (e) {
+
+            // console.log(this.data);
+        }
+
+        document.querySelector(element).appendChild(newP);
+        // document.querySelector('.titlesIngredients').appendChild(newP2);
+        //console.log(data.recipe[i].ingredients + " Ingredients found");
+        // line above returns unidentified
+    };
+
+
+};

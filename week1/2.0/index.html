@@ -1,69 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
-        <link rel="stylesheet" href="public/css/grid.css">
-        <link rel="stylesheet" href="public/css/style.css">
-        <link rel="stylesheet" href="public/css/media.css">
-    </head>
-    
-    <body>
 
-        <div id="view"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Recipe API call</title>
+    <link rel="stylesheet" href="public/css/grid.css">
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/media.css">
+    <link rel="stylesheet" href="public/css/animate.css">
+</head>
+
+<body>
+
+    <div id="view"></div>
 
 
+    <div class="mainWrapper">
 
-        <div class="mainWrapper">
-            
-            <div class="nav">
-                <li><a href="#home">Home.</a></li>
-                <li><a href="#/readme">Readme!</a></li>
-                <li><a href="#/pageNotFound">pageNotFound</a></li>
-                <li><a href="#">Reiciendis!</a></li>
-            
+        <div class="nav">
+            <li><a href="#home">Home.</a></li>
+            <li><a href="#/readme">Readme!</a></li>
+            <li><a href="#/pageNotFound">pageNotFound</a></li>
+            <li><a href="#">Reiciendis!</a></li>
+
+        </div>
+
+        <div class="nested">
+            <!-- <form> -->
+            <div class="typeWriter">
+                <h5>Look up Your Favorite Ingredients to:</h5>
+                <h4>
+                    <span class="txt-type" data-wait="3000" data-words='["Find new Recipes", "Share", "Inspire"]'>
+                    </span>
+                </h4>
+                <div id="ingredients" class="recommendedSection">
+                    <div class="nested searchedRecipes" id="LookedUpTitles"></div>
+                    <div class="entry">
+                        <div class="body">
+                        </div>
+                    </div>
+
+                    <div class="inputSearch">
+                        <input id="searchInput" type="text" placeholder="What ingredients do you like">
+                        <input id="submitButton" type="submit" placeholder="submit" value="Search">
+                    </div>
+
+                </div>
             </div>
+
+            <div class="offLanding">
+                <div class="words">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus corrupti fuga
+                    reprehenderit reiciendis? Distinctio dignissimos magni atque labore, sint placeat!</div>
+                <script id="handleBarsTest" type="text/x-handlebars-template">
+
+                    <div class="entry"><h1>{{title}}
+                        {{#list people}}{{firstName}} {{lastName}}{{/list}}
+                        </h1>
+                        <div class="body"><h1>{{url}}
+                            </div>
+                            </div>
+                        </h1>
+                        <!-- <div class="body">{{secondProp}}</div> -->
             
-            <div class="nested">
-                <!-- <form> -->
-                    <div class="typeWriter">
-                        <h5>Look up Your Favorite Ingredients to:</h5><h4><span class="txt-type" data-wait="3000" data-words='["Find new Recipes", "Share", "Inspire"]'>
-                        </span>
-                    </h4>
-                    <div id="ingredients" class="recommendedSection">
-                        <div class="nested searchedRecipes" id="LookedUpTitles">
-                                </div>
-                            </div>
-                            
-                            <div class="inputSearch">
-                                <input id="searchInput" type="text" placeholder="What ingredients do you like">
-                                <input id="submitButton" type="submit" placeholder="submit" value="Search">
-                                </div>
-                                
-                                <!-- </form> -->
-                                
-                            </div>
-                            
-                            <div class="wrapper">
-                                <div>
-                                    <div class="item">Lorem ipsum dolor sit amet.</div>
-                                    <div class="item">Maxime odio harum illum ex!</div>
-                                    <div class="item">Corporis repellat consequuntur odio facilis?</div>
-                                </div>
+                    </div>
+                </script>
+
             </div>
         </div>
-    </div>
-    
-</div>
 
+    </div>
+
+</body>
 <!-- Export -->
-<script src="public/js/key.js" type="module"></script>
 <script src="public/js/testObject.js" type="module"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+
 <!-- Import -->
 <script src="public/js/routie.js"></script>
+<!-- <script src="public/js/template.js"></script> -->
 <script src="public/js/App.js" type="module"></script>
 
 </body>
