@@ -1,5 +1,4 @@
 
-
 // write logic to fill html with detailed data
 const setContent = function (value) {
     alert(`${value}`);
@@ -23,14 +22,15 @@ routie({
 
     },
     // tip, call: templating actor!!!
+    '*': function () {
+        console.log('404');
+        setContent("succesfully not found what you're looking for. You will be redirected back to homepage(/)")
+        initializeRoute()
+    },
 
     '/readme': function () {
         console.log('read me')
-        setContent("succesfully entered the readme");
-    },
-    '*': function () {
-        console.log('404');
-        setContent("succesfully not found what you're looking for")
+        setContent("succesfully entered the readme");   
     }
 
 });

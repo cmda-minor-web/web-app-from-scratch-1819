@@ -1,6 +1,6 @@
 // prevent global scope
 "use strict";
-import routerExport from "./router.js";
+
 import key from './key.js';
 import testRecipes from './testObject.js';
 //import {Template} from './template.js';
@@ -13,7 +13,7 @@ import testRecipes from './testObject.js';
     let submitButton = document.querySelector('#submitButton');
     let viewMoreButton = document.querySelector('.viewMore');
 
-    routerExport();
+
 
 
     console.log();
@@ -25,9 +25,10 @@ import testRecipes from './testObject.js';
         
         
         //////////Real usage value of e///////////////////////////////////////////////////////////
-        //let e = document.querySelector('#searchInput');
+       // let e = document.querySelector('#searchInput');
         //////Testing value of e/////////////////////////////////////////////////////////
         let e = testRecipes;
+        //console.log(testRecipes);
         
         
         
@@ -45,11 +46,12 @@ import testRecipes from './testObject.js';
         //         console.log("U searched for meals with: " + e.innerText);
         //    // console.log('api auto')
         //     apiRequestHandler(e.value).then((res)=>{
-            //         for(let i = 0; i< 3; i++ ){  
-                //             new Template('.main', res, '#LookedUpTitles');
-                //             console.log('templating of ' + '#LookedUpTitles'  +  '  Element ' + i + ' succeeded!')
-                //     }
-                //     });
+        //             for(let i = 0; i< res.length; i++ ){  
+        //                 console.log(res);
+        //                     new Template('recipes', res, '#LookedUpTitles');
+        //                     //onsole.log('templating of ' + '#LookedUpTitles'  +  '  Element ' + i + ' succeeded!')
+        //             }
+        //             });
                 
                 
             });
@@ -70,7 +72,7 @@ import testRecipes from './testObject.js';
     // });
     // console.log(searchSubject);
 
-
+ 
     class Template {
         constructor(htmlClass, res, toElement) {
             // data moet een object zijn
@@ -78,19 +80,8 @@ import testRecipes from './testObject.js';
                 //adjecenthtml / of .innertext ///// geen innerhtml!!
             // select the place to put the new content
             
-            console.log('the templating data = ' + res)
-            this.htmlClass = htmlClass
-            let compiledTemplate = Handlebars.compile(htmlClass);
-            // let template = template(res);
-            //console.log(toElement);
-            
-            this.newHandlebar = JSON.stringify(res);
-            this.newHandlebar = document.createElement('P');
-            this.newHandlebar.innerText = compiledTemplate(res);
-            let handleBar = this.newHandlebar
-        console.log(this.newHandlebar.innerText)
-            document.querySelector(toElement).appendChild(handleBar);
-
+            //console.log('the templating data = ' + res)
+            Transparency.render(document.getElementById('recipes'), res);
     
             // this.context = res;
             // let data = this.context;
@@ -249,6 +240,9 @@ import testRecipes from './testObject.js';
     };
 
    // recipeShowcase();
+
+
+
 })();
 
 // Init Typewriter

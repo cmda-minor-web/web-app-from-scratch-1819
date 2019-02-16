@@ -13,10 +13,11 @@
 </head>
 
 <body>
-
+    
     <div id="view"></div>
 
-
+    
+    
     <div class="mainWrapper">
 
         <div class="nav">
@@ -37,10 +38,7 @@
                 </h4>
                 <div id="ingredients" class="recommendedSection">
                     <div class="nested searchedRecipes" id="LookedUpTitles"></div>
-                    <div class="entry">
-                        <div class="body">
-                        </div>
-                    </div>
+                    
 
                     <div class="inputSearch">
                         <input id="searchInput" type="text" placeholder="What ingredients do you like">
@@ -53,19 +51,6 @@
             <div class="offLanding">
                 <div class="words">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus corrupti fuga
                     reprehenderit reiciendis? Distinctio dignissimos magni atque labore, sint placeat!</div>
-                <script id="handleBarsTest" type="text/x-handlebars-template">
-
-                    <div class="entry"><h1>{{title}}
-                        {{#list people}}{{firstName}} {{lastName}}{{/list}}
-                        </h1>
-                        <div class="body"><h1>{{url}}
-                            </div>
-                            </div>
-                        </h1>
-                        <!-- <div class="body">{{secondProp}}</div> -->
-            
-                    </div>
-                </script>
 
             </div>
         </div>
@@ -75,10 +60,12 @@
 </body>
 <!-- Export -->
 <script src="public/js/testObject.js" type="module"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+<script src="js/transparency.min.js"></script>
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script> -->
 
 <!-- Import -->
-<script src="public/js/routie.js"></script>
+<script src="https://raw.github.com/leonidas/transparency/master/dist/transparency.min.js"></script>
 <!-- <script src="public/js/template.js"></script> -->
 <script src="public/js/App.js" type="module"></script>
 
