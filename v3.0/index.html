@@ -11,8 +11,25 @@
 
 </head>
 <body>
+    <h1 class="title">Welcome to my Food2Fork Implementation</h1>
+    
+    <h2 id="localStorage">
+        <section id="box">
+            <form>
+                <h2>Get API Data</h2>
+                <p><input id="searchQueryInput" type="text" placeholder="Ingredients"></input></p>
+                <button id="APIButton" type="submit">Submit</button>
+                <a href="javascript:clearStorageFromPage()">Clear sessionStorage</a>
+            </form>
+        </section>
+
+
+        <section id="displayData">
+
+        </section>
+    </h2>
             <ul id="templateAPI">
-                    <h1 class="title"></h1>
+                    <h3 class="title"></h3>
                     <a class="url"></a>
                 </ul>
                 <h2>note to self: add img to #templateClass</h2>
@@ -22,10 +39,13 @@
     <script src="public/js/transparancy.js"></script>
     
     <!-- Homemade scripts    -->
-    <script src="public/js/key.js" type="module"></script>
-    <script src="public/js/testObject.js" type="module"></script>
+    <script src="public/js/testObject.js"></script>
+    <script src="public/js/key.js"></script>
+    
+    <script src="public/js/template.js"></script>
+    <script src="public/js/cache.js"></script>
+    <script src="public/js/app.js"></script>
     <script src="public/js/router.js"></script>
-    <script src="public/js/app.js" type="module"></script>
 </body>
 
 </html>

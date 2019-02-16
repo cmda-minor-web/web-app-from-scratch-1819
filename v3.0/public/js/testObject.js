@@ -2,11 +2,11 @@
 //     title = 'this is a string recipe title',
 //     url= 'this is a string url'
 // }
-let testRecipes = {
+let testObject = {
     "recipes": [{
-         title: 'beef',
-       url: 'www.beefexample.url',
-       IMGurl: 'https://source.unsplash.com/random/800x600'
+        title: 'beef',
+        url: 'www.beefexample.url',
+        IMGurl: 'https://source.unsplash.com/random/800x600'
     },
     {
         title: 'cake',
@@ -20,6 +20,8 @@ let testRecipes = {
     }
 ]
 };
+
+
 
 // class recipeTestObject {
 //     constructor(recipes) {
@@ -48,8 +50,6 @@ let testRecipes = {
 //     url: 'www.soupexample.url'
 // });
 //testRecipes.push(soup);
-console.log(testRecipes);
-export default testRecipes;
 //console.log(recipeTestObject(recipes));
 
 // class createTestObject extends recipeTestObject({

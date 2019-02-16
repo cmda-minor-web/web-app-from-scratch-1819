@@ -20,7 +20,7 @@ routie({
     'home': function () {
         // call view functionalities to render content to the page
         console.log("succesfully entered the homepage");
-
+        template(testRecipes);
     },
     // tip, call: templating actor!!!
 
