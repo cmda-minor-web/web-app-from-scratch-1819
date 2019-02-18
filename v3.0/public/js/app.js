@@ -36,7 +36,8 @@ function callAPI(searchQueryInput) {
         //console.log(res);
         var APIResponse = res;
         console.log(APIResponse)
-        for (var i = 0; i < APIResponse.recipes.length; i++) {
+        // for (var i = 0; i < APIResponse.recipes.length; i++) {
+        for (var i = 0; i < 8; i++) {
             saveInLocalStorage(APIResponse, searchQueryInput);
            
             console.log('sessionStorage.length = ' + sessionStorage.length + ' at the end of script')
@@ -48,4 +49,19 @@ function callAPI(searchQueryInput) {
 };
     
 
-/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////Possible new module style.js?
+
+// function backgroundEffect(body, color){
+    
+//     var element = document.getElementById('element');
+// element.style.background = '#FF00AA';
+    
+//     document.addEventListener
+// }
+
+// backgroundEffect();
+
+// color.onclick = function() {
+//     document.querySelectorAll('.card').style.backgroundColor.text/CSS('background: rgb(0,0,0); background: linear-gradient(180deg, rgba(0,0,0,0.8861825980392157) 21%, rgba(255,255,255,1) 47%, rgba(0,17,122,0.8217568277310925) 78%)')
+// }
+
