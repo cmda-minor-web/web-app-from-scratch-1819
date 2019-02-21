@@ -8,7 +8,7 @@ function templateFunction(APIResponse, targetHTML) {
 
 };
 
-document.querySelector('#navIDReturn').addEventListener('click', returnWindowXY);
+document.querySelector('.navIDReturn').addEventListener('click', returnWindowXY);
 
 function returnWindowXY(){
     window.scrollTo(0,0); 

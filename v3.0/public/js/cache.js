@@ -10,20 +10,20 @@ function getInput() {
 
 function checkSessionStorage(searchQueryInput) {
     var oldQueryData = sessionStorage.getItem('keyOfAPIResponse');
-    console.log(oldQueryData)
+    console.log('Old dataset string: ' + oldQueryData);
 
     // What if there's no old query?
-    if (oldQueryData == null) {
+    if (oldQueryData === null) {
         callAPI(searchQueryInput)
         console.log('there was no old query, called API');
     }
     // What if there is an old Query?
-    if (oldQueryData !== null) {
+    else (oldQueryData !== null) ;{
 
 
-        if (confirm('Hey There Hungry Person!\n\n' +
+        if (confirm(
                 "We've found an old dataset from your previous queries\n" +
-                'Do you want to load that old one instead of the new one?\n\n' +
+                'Do you want to load that old one instead of the new one?\n\n\n' +
                 'Press Confirm if you want to load the OLD dataset!\n\n' +
                 'Press Cancel if you want to load a NEW dataset!\n\n'
             )) {
@@ -31,6 +31,7 @@ function checkSessionStorage(searchQueryInput) {
             //YES you want to load the old dataset
             //var APIResponse = sessionStorage.getItem('keyOfAPIResponse')
             APIResponse = JSON.parse(APIResponseString);
+            console.log(APIResponse);
             saveInLocalStorage(APIResponse);
             templateFunction(APIResponse)
             console.log('Succesfully Rendered To Template');
@@ -49,7 +50,7 @@ function checkSessionStorage(searchQueryInput) {
 //     //console.log(e)
 // }
 function saveInLocalStorage(APIResponse) {
-    console.log('save in local storage is called');
+    console.log('save in local storage is called ' + APIResponse);
     var APIResponseString = JSON.stringify(APIResponse);
     var APIStorageKey = 'keyOfAPIResponse';
     sessionStorage.setItem(APIStorageKey, APIResponseString)

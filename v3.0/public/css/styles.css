@@ -2,17 +2,23 @@
   
   :root {
     --primary: #ddd;
-    --dark: #333;
+    --dark: rgb(22, 22, 22);
     --light: #fff;
     --shadow: 10px 5px 50px rgb(0, 0, 0);
     --shadowHover: 2vw 5vh 5vw rgb(0, 0, 0);
     --lightshadow: 10px 5px 100px rgba(0, 0, 0, 0.678);
+    --shadowHoverLeft: -2vw 5vh 5vw rgb(0, 0, 0);
+    --shadowHoverMiddle: 0vw 3vh 10vw rgb(0, 0, 0);
+    --shadowHoverRight:2vw 5vh 5vw rgb(0, 0, 0);
     --shadowMedium: 10px 5px 100px  rgba(0, 0, 0, 0.349);
     
     --textcolor: #005656;
-    --mediumbox: #2b9292;
-    --lightbox: #4CAAAA;
+    --mediumbox: #0a0094;
+    --lightbox: rgb(176, 48, 250);
     --darkbox: #efffff;
+
+    --hoverColor: rgb(0, 45, 129);
+    
     
     --background: rgba(255, 255, 255, 0.671);
     --invisible: rgba(255, 255, 255, 0);
@@ -41,6 +47,7 @@
 
       --widthContainer600: calc(1em + 90vw /2;)
     }
+
 /* /////////////////////////////////////////////////////////////////////////////////// */
 
 
@@ -68,28 +75,80 @@ nav{
     vertical-align: center;
     justify-items: center;
     font-size: var(--fontSizeP);
-    background-color: #efffff;
+    background-color: #a51effa4;
     box-shadow: var(--shadowMedium);
     z-index: 20;
 }
 
 nav:hover{
-    background-color: #fff;
+    background-color: var(--hoverColor);
     box-shadow: var(--shadow);
+    transition: 0.2s;
 }
 
-#navID{
+.Title:hover{
+    background-color: var(--hoverColor);
+    box-shadow: var(--shadowHoverMiddle);
+    transition: 0.2s;
+    border-radius: 10vw;
+    margin-right: 10vw;
+    margin-left: 10vw;
+
+}
+
+#box{
+    transition:0.5s;
+    border: 0px solid black;
+    padding-bottom: 10vw;
+}
+
+#box:hover{
+    background: var(--hoverColor);
+    transition: 0.5s;
+    border-radius: 10vw;
+    margin-right: 10vw;
+    margin-left: 10vw;
+    padding-bottom: 4vw;
+    /* border: 1px; */
+}
+
+
+.navID{
     transition: 0.2s;
     margin-left: 10px;
     margin-right: 10px;
 }
 
-#navID:hover{
-    border-bottom: 3px solid gold;
-    background-color: #c2ffff;
+.navID:hover{
+    border-bottom: 3px solid rgb(0, 162, 255);
+    background-color: #000000;
     border-radius: 5px;
+    
 }
 
+.navID:nth-child(3):hover{
+  
+    box-shadow: var(--shadowHoverLeft);
+}
+
+.navID:nth-child(4):hover{
+  
+    box-shadow: var(--shadowHoverMiddle);
+}
+
+.navID:nth-child(5):hover{
+  
+    box-shadow: var(--shadowHoverMiddle);
+}
+
+.navID:nth-child(6):hover{
+  
+    box-shadow: var(--shadowHoverRight);
+}
+
+.navIDReturn{
+    position: sticky;
+}
 
 ul{
     padding: 0;
@@ -99,7 +158,7 @@ h1{
 }
 
 .GlobalContainer {
-    display: grid;
+    display: none;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     margin-right: 2vw;
@@ -114,7 +173,7 @@ h1{
 
         background: var(--background);
         transition: 0.5s;
-        box-shadow: var(--shadowHover);
+        box-shadow: var(--shadowHoverMiddle);
 }
 
 .Title {
@@ -127,6 +186,7 @@ h1{
     vertical-align: center;
     justify-items: center;
     justify-content: center;
+    transition: 0.2s;
 }
 
 
@@ -146,12 +206,21 @@ h1{
 }
 
 i{
-    color: gold;
+    color: rgb(5, 43, 214);
 }
 
 .title{
     margin: 2px 5px;
     padding: 0.2em 0.2em;
+    font-size: 1.5vw;
+    font-weight: 200;
+    transition:0.1s;
+}
+
+.title:hover{
+    font-weight: 500;
+    transition:0.1s;
+    
 }
 
 .card-head{
@@ -199,8 +268,7 @@ card-logo{
 }
 
 .card{
-    
-    box-shadow: var(--lightshadow);
+    width: 40vw;
     opacity: 0.5;
     background: var(--boxColor2);
     transition: 0.5s;
@@ -210,7 +278,7 @@ card-logo{
 .card:hover{
     
     
-    box-shadow:  var(--shadow);
+    box-shadow:  var(--shadowHoverMiddle);
     padding-bottom: 2em;
     opacity: 1;
     border-radius: 5vw;
@@ -252,15 +320,19 @@ footer{
     justify-items: center;
     margin-top: 5em;
     
-    background-color: rgb(192, 192, 192);
+    background-color: var(--dark);
     color: #fff;
     border-top: 2px solid grey;
 }
-#footer{
-    
+.footer{
     border-top: 3px solid var(--shadow);
 }
 
+.footer:hover{
+    box-shadow: var(--shadowHover);
+    transition: 0.2s;
+    font-size: 2vw;
+}
 /* .title{
     display: grid;
     grid-template-columns: repeat(1fr, 4);
@@ -338,13 +410,10 @@ footer{
    }
 
    
-   .container{
-    
-}
 
 nav{
     margin-top: -3em;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     position: relative;
 }
 #navID > p {

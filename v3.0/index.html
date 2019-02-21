@@ -23,27 +23,33 @@
     <nav>
         
     
-        <button id="navIDReturn">
-            <p>Return To Start</p>
+        <button class="navIDReturn">
+                <i class="fas fa-arrow-circle-up fa-3x"></i>
         </button> 
     
-        <a href="#" id="navID">
+        <a href="#" class="navID">
             
         </a>
 
-        <a href="#" id="navID">
-            <p>Social Media</p>
+        <a href="#" class="navID">
+            <i class="fab fa-facebook fa-3x"></i>
         </a>
         
         
-        <a href="#" id="navID">
-            <p>Contact</p>
+        
+        <a href="#" class="navID">
+            <i class="fab fa-whatsapp fa-3x"></i>
+            
         </a>
-
-        <a href="#" id="navID">
-                <p>Products</p>
-            </a>
-   
+        <a href="#" class="navID">
+            <i class="fab fa-instagram fa-3x"></i>
+            
+        </a>
+        <a href="#" class="navID">
+            <i class="fab fa-twitter fa-3x"></i>
+            
+        </a>
+        
         
     </nav>
     <h1 class="Title">Food 2 Fork API</h1>
@@ -53,7 +59,8 @@
             <form>
                 <h2>Get API Data</h2>
                 <p><input id="searchQueryInput" type="text" placeholder="Ingredients"></input></p>
-                <button id="APIButton" type="submit">Submit</button>
+                <button id="APIButton" type="submit" href="javascript:showBox()">Submit</button>
+                
                 <a href="javascript:clearStorageFromPage()"><p>Clear SessionStorage</p></a>
             </form>
         </section>
@@ -74,22 +81,23 @@
        
             <div class="container" id="templateAPI">
                 <div class="card">
-                    <div class="card-head">
+                    <!-- <div class="card-head">
                         <img src="/v3.0/public/img/hamburger.png" alt="" class="product-img">
                     </div>
-                    
+                     -->
                     
                     <div class="product-detail">
                         <h3 class="title">
-                        </h3>
+                        <!-- </h3>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
-                        
-                            <div class="source_url"></div>
-                            <i class="fas fa-angle-double-right"></i>
+                         -->
+                            <div class="publisher"></div>
+                            <a class="source_url"></a>
+                            <!-- <i class="fas fa-angle-double-right"></i> -->
                     </div>
                 </div>
             </div>
@@ -98,12 +106,12 @@
 
 
      <footer>
-         <div id="footer">
+         <div footer="footer">
              <a href="#">
                  <p>Design by stanooms96@gmail.com</p>
              </a>
          </div>
-         <div id="footer">
+         <div class="footer">
              <a href="#">
                  <p>Web-App From Scratch. HvA.</p>
              </a>

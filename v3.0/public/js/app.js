@@ -65,3 +65,12 @@ function callAPI(searchQueryInput) {
 //     document.querySelectorAll('.card').style.backgroundColor.text/CSS('background: rgb(0,0,0); background: linear-gradient(180deg, rgba(0,0,0,0.8861825980392157) 21%, rgba(255,255,255,1) 47%, rgba(0,17,122,0.8217568277310925) 78%)')
 // }
 
+// class particle{
+//     constructor(){
+//         this.
+//     }
+// }
+
+function showBox(){
+    document.querySelector('.GlobalContainer').style.display('grid');
+}
