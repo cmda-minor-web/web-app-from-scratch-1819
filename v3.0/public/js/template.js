@@ -1,9 +1,13 @@
-var selectedCatArray = [];
-var selectedCatFirstTime = 0;
-var categoryArray = [];
-var fgID = [];
 
-console.log(searchQueryInput);
+
+class fgID_fgName{
+    constructor(name, fgID){
+        this.name = name;
+        this.fgID = fgID;
+    }
+};
+
+
 
 // Where should I put the new html?
 var targetHTML1 = "#templateAPICategories"; // look up te food groups
@@ -58,11 +62,11 @@ function templateCategories(APIResponse, targetHTML) {
 
 
 function templator(APIResponse, targetHTML) {
-    categoryArray.push(APIResponse.list.item);
     document.querySelector(targetHTML).innerHTML = `
     <option>Filter Foodgroups</option>
     ${APIResponse.list.item.map(templateCategories).join('')}
-    `
+    `;
+    
 }
 // function templateCategories(APIResponse){
 //     var data = APIResponse.list.item;
@@ -93,16 +97,16 @@ function returnWindowXY() {
 
 // Filter Through data to find names that match the searchQuery from the input element
 
-var categoryArray = [document.querySelector('.name')]
-var goodFilteredArray = [];
+// var categoryArray = [document.querySelector('.name')]
+// var goodFilteredArray = [];
 
-function filterForQuery(APIResponseItems) {
-    console.log()
-    for (var i = 0; i < categoryArray.length; i++)
-        if (categoryArray[i].checked = false) {
-            console.log('adfadfadadasd')
-        }
-    else {
-        // unimportant items
-    }
-}
+// function filterForQuery(APIResponseItems) {
+//     console.log()
+//     for (var i = 0; i < categoryArray.length; i++)
+//         if (categoryArray[i].checked = false) {
+//             console.log('adfadfadadasd')
+//         }
+//     else {
+//         // unimportant items
+//     }
+// }
