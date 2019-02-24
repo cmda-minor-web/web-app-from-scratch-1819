@@ -6,6 +6,7 @@
     // write logic to fill html with detailed data
     var setContent = function (value) {
         alert(`${value}`);
+        
     }
     //init route, check if hash === '' => set to #home
     var initializeRoute = function () {

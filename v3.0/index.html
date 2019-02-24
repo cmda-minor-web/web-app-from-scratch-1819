@@ -27,10 +27,7 @@
                 <i class="fas fa-arrow-circle-up fa-3x"></i>
         </button> 
     
-        <a href="#" class="navID">
-            
-        </a>
-
+        <p>Food 2 Fork API</p>
         <a href="#" class="navID">
             <i class="fab fa-facebook fa-3x"></i>
         </a>
@@ -55,14 +52,29 @@
     <h1 class="Title">Food 2 Fork API</h1>
 
     <h2 id="localStorage">
-        <section id="box">
-            <form>
-                <h2>Get API Data</h2>
-                <p><input id="searchQueryInput" type="text" placeholder="Ingredients"></input></p>
-                <button id="APIButton" type="submit" href="javascript:showBox()">Submit</button>
+        <section > <div id="box">
+            <div id="box2">
+                <h3>Foodgroup Filter:</h3>
+
+                <select name="templator" onchange="addCatToFilter()" id="templateAPICategories">
+            
+                </select>
+
+                <div class="selectedCat"></div>
                 
-                <a href="javascript:clearStorageFromPage()"><p>Clear SessionStorage</p></a>
-            </form>
+        </div>
+            <div class="form">
+
+                <form>
+                    <h2>Get API Data</h2>
+                    <p><input id="searchQueryInput" type="text" placeholder="Ingredients"></input></p>
+                    <button id="APIButton" type="submit"><a href="javascript:filterForQuery">Submit</a></button>
+                    
+                    <a href="javascript:clearStorageFromPage()"><p>Clear SessionStorage</p></a>
+                </form>
+            </div>
+
+        </div>
         </section>
 
 
@@ -87,7 +99,7 @@
                      -->
                     
                     <div class="product-detail">
-                        <h3 class="title">
+                        <h3 class="name">
                         <!-- </h3>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -95,8 +107,7 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                          -->
-                            <div class="publisher"></div>
-                            <a class="source_url"></a>
+                
                             <!-- <i class="fas fa-angle-double-right"></i> -->
                     </div>
                 </div>
