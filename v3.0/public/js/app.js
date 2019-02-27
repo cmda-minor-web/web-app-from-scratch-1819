@@ -1,51 +1,33 @@
 "use strict";
 var APIResponseString = (sessionStorage.getItem(APIResponseString));
 
-var event = document.querySelector('#APIButton').addEventListener('click', callAPIDetail && addToUrlInput);
+var event = document.querySelector('#APIButton').addEventListener('click', addToUrlInput);
 var query = document.getElementById("searchQueryInput").textContent;
 var queryString = [];
 
 var selectedCatArray = [];
 var selectedCatFirstTime = 0;
 var categoryArray = [];
-var fgID = [];
-var fgIDString= '';
 
-function addToUrlInput() {
-    console.log(selectedCatArray);
-
-    for (var i = 0; i < selectedCatArray.length; i--) {
-        //console.log(fgID_fgName.name)
-       // console.log(categoryArray);
-        i++;
-     //   console.log(selectedCatArray[i] + '    ' + stringify([categoryArray]); //undefined
-        if (selectedCatArray[i] == categoryArray[0][i]) {
-            console.log(categoryArray[0].item[i].name)
-            fgID.push("&fg=" + categoryArray[0].item[i].id);
-            
-            i++}
-        }
-
-
-    for(var z = 0; z < fgID.length; i++){
-        fgIDString.concat(fgID[z]);
-        console.log(fgIDString)
-    }
-    
-
-
-
-    
-    console.log(fgIDString);
+var getHome = function(){
+    window.location.hash = '#home'
+    return;
 }
 
+function addToUrlInput() {
+    console.log(document.getElementById("searchQueryInput").value)
+    var fgID = '';
+    for(var i = 0; i < categoryArray[0].item.length; i++) {
+        if(selectedCatArray[0] === categoryArray[0].item[i].name) {
+            fgID = fgID.concat("&fg=")
+            fgID =  fgID.concat(categoryArray[0].item[i].id);
+        };
+    };
+   // console.log(fgID);
+    callAPIProducts(fgID)
+};
 
 
-
-
-
-
-//
 function getCurrentTime() {
     var d = new Date();
     var time = d.getTime();
@@ -64,8 +46,8 @@ function requestAPIFoodGroups() {
     .then((res) => res.json())
     .then(res => {
         categoryArray.push(res.list);
-        console.log(res);
-        
+       // console.log(res);
+        //console.log(JSON.stringify(res))
         
         for (var i = 0; i < res.list.item.length; i++) {
             var name = res.list.item[i].name.valueOf();
@@ -83,8 +65,8 @@ function requestAPIFoodGroups() {
             }
             
             if(query.key == 'Backspace'){
-                queryString.pop();
-                queryString.pop();
+                queryString.pop(); // pop('backspace')
+                queryString.pop(); // pop('new key')
             }
 
             if(document.querySelector('#searchQueryInput').value == ''){
@@ -97,9 +79,9 @@ function requestAPIFoodGroups() {
     .catch(err => console.log(err));
 }
 
-requestAPIFoodGroups();
 
-function callAPIDetail() {
+
+function callAPIProducts(fgID) {
     // need to change the fgID tag in url below to match &fg=
     // for(var i = 0; i < fgID_fgName.length; i++){
     //     fgID.push("&fg=" +     
@@ -108,20 +90,17 @@ function callAPIDetail() {
 for(var i = 0; i < queryString.length; i++){
     queryURL += (queryString[i])
 }
-console.log(queryURL)
+//console.log(queryURL)
 
     var url = 'https://api.nal.usda.gov/ndb/search/?format=json&q=' + queryURL + '&sort=n&max=25&offset=0' + fgID + '&api_key=' + key;
     console.log('the total url = ' + url)
     fetch(url)
-        .then((res) => {
-            res.json()
-
+    .then((res) => res.json())
+    .then((res) => {
+       // console.log(res)
+        //need to insert caching before templateFunction is called
+        templateFunction(res);
         })
-        .then((res) => {
-            console.log('new api call ' + queryURL);
-            console.log('the productnumber = ' + res);
-            var APIResponse = res;
-        })  
         .catch(err => console.log(err));
 }
 
@@ -130,9 +109,9 @@ console.log(queryURL)
 
 ///////////////////////API REQUEST
 function callAPI(productNumber) {
-    console.log('new api call' + searchQueryInput);
+    console.log('new api call for ' + productNumber);
 
-    var url = 'https://api.nal.usda.gov/ndb/reports/?' + productNumber + '&type=b&format=json&api_key=' + key;
+    var url = 'https://api.nal.usda.gov/ndb/reports/?ndbno=' + productNumber + '&type=b&format=json&api_key=' + key;
     // var endpoint =  'https://api.nal.usda.gov/ndb/V2/reports?ndbno=' + productNumber + '&type=b&format=json&api_key=' + key;
     // var endpoint = 'https://api.nal.usda.gov/ndb/search/?format=json&q=' + searchQuery + '&max=25&offset=0&api_key=' + key; 
     // https://api.nal.usda.gov/ndb/V2/reports?ndbno=01009&type=b&format=json&api_key=DEMO_KEY
@@ -140,7 +119,7 @@ function callAPI(productNumber) {
 
 
 
-    console.log('the total url = ' + url)
+   // console.log('the total url = ' + url)
     // saveInLocalStorage(testObject);
 
     fetch(url)
@@ -150,13 +129,11 @@ function callAPI(productNumber) {
             //var htmlTarget = '#templateAPI';
 
             //console.log(res);
-            var APIResponse = res;
-            console.log(APIResponse)
             // for (var i = 0; i < APIResponse.recipes.length; i++) {
             for (var i = 0; i < 8; i++) {
 
 
-                saveInSessionStorage(APIResponse, productNumber);
+                saveInSessionStorage(res, productNumber);
 
                 console.log('sessionStorage.length = ' + sessionStorage.length + ' at the end of script')
                 return console.log('________________________________________________________Succesfully Rendered To Template');
@@ -206,3 +183,91 @@ function callAPI(productNumber) {
 // }
 
 // showBox();
+
+
+
+// function databasefunction(){
+//     for(var i = 0 ;  i < database.name.length; i++){
+
+//         database.get[i]('regio')
+
+//         if(database.res === searchInput){
+//             return database.res
+//         }
+
+//         getData(res)
+
+//     }
+    
+// }
+
+
+
+// function getData(res){
+//     var plaatsOpWebsite = document.querySelector('plaatsnaam').innerHTML
+//     plaatsOpWebsite.value = res;
+
+// }
+
+
+// // input ding
+
+// // input = budgetlegal
+
+
+// database = [
+    
+//     {
+//     name: 'budgetlegal',
+//     regio: 'hoorn',
+//     prijs: '100',
+//     unit: 'uur',
+//     rechtsgebied: [
+//         {
+//             name1: 'bedrijfsrecht',
+//         },
+
+//         {
+//             //name 2
+//         }
+//     ]
+//     }
+// ]
+
+// // detailpagina 
+//     //form
+//         // knop submit 
+//         // input
+
+// // knop submit heef functie onclick
+ 
+// // onclick="voegToeAanDatabase()"
+
+
+// function voegToeAanDatabase(){
+//     var x = document.querySelector('input element id').value
+    
+//     new databaseData(x)    
+// }
+
+// var i =  getDate()
+
+// eindevandedagFunctie(){
+//     var y = getDate()
+//     if(y > i + 600000){
+
+//         database.put([x])
+//     }    
+    
+// }
+
+// class databaseData(x){
+//     constructor(
+//         this.name = x.name;
+//     )
+
+
+
+// }
+
+

@@ -59,13 +59,19 @@ function checkSessionStorage(searchQueryInput) {
 //     //console.log(e)
 // }
 function saveInSessionStorage(APIResponse) {
-    console.log('save in local storage is called ' + APIResponse);
+    console.log('save in local storage is called ')
+    //console.log(JSON.stringify(APIResponse));
     var APIResponseString = JSON.stringify(APIResponse);
     var APIStorageKey = 'keyOfAPIResponse';
     sessionStorage.setItem(APIStorageKey, APIResponseString)
-    display(APIResponseString);
+    displayDetail(APIResponseString);
 }
 
+function displayDetail(data){
+        var data = JSON.parse(sessionStorage.getItem('keyOfAPIResponse'));
+        console.log(data);
+        templateDetail(data, '.card');
+}
 
 function display(APIResponseString) {
     for (var i = 0; i < sessionStorage.length; i++) {

@@ -6,3 +6,5 @@ What am i working on?
     - callAPIDetail converts is to the associated fg number
     - callAPIDetail attaches it to its url string and fetches it to get data filtered by the checkboxes.
     - callAPIDetail gives us an productnumber which will be added to CallAPI() which returns product specific nutrient info and calls the template function to handle DOM manipulation
+
+    

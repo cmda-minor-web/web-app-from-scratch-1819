@@ -128,6 +128,13 @@ nav > p:hover{
     padding-bottom: 10vw;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode;
+    animation: myAnimation;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-direction: reverse;
+    animation-play-state: running; */
+
 }
 
 #box:hover{
@@ -411,85 +418,3 @@ footer{
     width: var(--imgWidth);
     height: var(--imgHeight);
 } */
-
-
-/* /////////////////////////MEDIA QUERIES */
-@media only screen and (max-width: 940px) {
-    .GlobalContainer {
-        display: grid;
-        margin-right: 5vw;
-        margin-left: 5vw;
-     
-    }
-
-    .card{
-        display: grid;
-        grid-row: 2/4;
-        grid-column: 0/2;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(1fr, 3);
-        grid-gap: var(--gridGap);
-        color: var(--textcolor);
-        z-index: 10;
-
-    }
-    
-    #templateAPI{
-        grid-template-columns: 1fr;
-    }
-    .product-img{
-        /* position: absolute; */
-        left: 0;
-        margin-top: -3vh;
-        /* margin-left: 5vw; */
-        padding: 0 5vw;
-        width: var(--imgWidth);
-        height: var(--imgHeight);
-      
-    }
-}
-
-
-
-
-@media only screen and (max-width: 400px) {
-
-    body{
- 
-    }
-    #templateAPI{
-        grid-template-columns: 1fr 1fr;
-        grid-row: 3/4;
-       
-    }
-
-
-
-
-   .Title{
-       grid-column: 1/2;
-   }
-
-   
-
-nav{
-    margin-top: -3em;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    position: relative;
-}
-#navID > p {
-    display: block;
-}
-
-#navID > p:hover{
-   
-    transition: 0.2s;
-    font-size: 5vw;
-}
-
-footer{
-    display: flex;
-    justify-content: space-around;
-}
-
-}
